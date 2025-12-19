@@ -1,0 +1,6 @@
+res://main.tscn
+res://addons/event_audio/scenes/bank_line.tscn
+res://addons/event_audio/scenes/bank_resource_line.tscn
+res://addons/event_audio/scenes/event_audio_autoload.tscn
+res://addons/event_audio/src/ea_config.gd
+res://addons/event_audio/event_audio.gd
