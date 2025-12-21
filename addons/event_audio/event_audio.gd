@@ -1,9 +1,7 @@
-extends Node
+class_name TeaAPI extends Node
 
-# Ideally this would be called just EventAudio, but that would class with the autoload
-class_name EventAudioAPI
 static var _separator := "+"
-static var instance : EventAudioAPI
+static var instance : TeaAPI
 
 @export var log_lookups := false
 @export var log_deaths := false
@@ -11,30 +9,25 @@ static var instance : EventAudioAPI
 
 var _trigger_map: Dictionary
 var _rng: RandomNumberGenerator
-var _audio_banks: Array[EAEventBank]
+var _audio_banks: Array[TeaBank]
+var polyphony_limit_tracker: Dictionary
 
 class AudioEmitter2D:
 	var source: Node2D
 	var player: AudioStreamPlayer2D
-	var event: EAEvent
+	var event: TeaLeaf
 
 var _active_emitters_2d = Array()
 
-class AudioEmitter3D:
-	var source: Node3D
-	var player: AudioStreamPlayer3D
-	var event: EAEvent
+var global_suppression: bool = false
+func set_global_suppress_sfx(option: bool = true):
+	global_suppression = option
+	if global_suppression:
+		for emitter: AudioEmitter2D in _active_emitters_2d:
+			emitter.player.stop()
 
-var _active_emitters_3d = Array()
-
-#region ::: my cool and custom code and stuff
-
-#endregion
-
-#---------------------------------------------------------
-# API
-#---------------------------------------------------------
-static func get_instance() -> EventAudioAPI:
+#region ::: API
+static func get_instance() -> TeaAPI:
 	return instance
 
 func play_2d(trigger: String, source: Node2D, output_bus: String = '') -> AudioEmitter2D:
@@ -45,25 +38,17 @@ func play_2d(trigger: String, source: Node2D, output_bus: String = '') -> AudioE
 	var stream_player = AudioStreamPlayer2D.new()
 	return _play_event(event, stream_player, source, output_bus)
 
-func play_3d(trigger: String, source: Node3D, output_bus: String = '') -> AudioEmitter3D:
-	var event := _find_event_for_trigger(trigger)
-	if event == null:
-		return null
-
-	var stream_player = AudioStreamPlayer3D.new()
-	return _play_event(event, stream_player, source, output_bus)
-
 func stop(emitter):
 	if emitter.player != null:
 		emitter.player.stop()
 
-func register_event_bank(bank: EAEventBank):
+func register_event_bank(bank: TeaBank):
 	if log_registrations:
 		print("Registering bank: " + bank.resource_path)
 	_audio_banks.append(bank)
 	_invalidate_trigger_map()
 	
-func unregister_event_bank(bank: EAEventBank):
+func unregister_event_bank(bank: TeaBank):
 	if log_registrations:
 		print("Unregistering bank: " + bank.resource_name)
 	var idx := _audio_banks.find(bank)
@@ -71,7 +56,7 @@ func unregister_event_bank(bank: EAEventBank):
 		_audio_banks.remove_at(idx)
 		_invalidate_trigger_map()
 
-static func init_player_from_playback_settings(rng, stream_player, settings: EAEventPlaybackSettings):
+static func init_player_from_playback_settings(rng, stream_player, settings: TeaCfg):
 	var min_pitch := min(settings.min_pitch, settings.max_pitch) as float
 	var max_pitch := max(settings.min_pitch, settings.max_pitch) as float
 	var pitch = rng.randf_range(min_pitch, max_pitch)
@@ -89,13 +74,12 @@ static func init_player_from_playback_settings(rng, stream_player, settings: EAE
 		stream_player.attenuation = settings.attenuation
 		stream_player.panning_strength = settings.panning_strength
 
-#---------------------------------------------------------
+#endregion
 func _init():
 	_rng = RandomNumberGenerator.new()
 	
 func _process(_delta: float):
 	_active_emitters_2d = _process_active_audio(_active_emitters_2d)
-	_active_emitters_3d = _process_active_audio(_active_emitters_3d) 
 
 func _process_active_audio(active_audio):
 	var new_active_audio := Array()
@@ -110,12 +94,12 @@ func _process_active_audio(active_audio):
 			audio.player = null
 			alive = false
 		elif audio.source == null:
-			if audio.event.playback_settings.stop_when_source_dies:
+			if audio.event.cfg.stop_when_source_dies:
 				audio.player.stop()
 				alive = false
 
 		# Update the position
-		if not audio.event.playback_settings.stationary and alive and audio.source != null:
+		if not audio.event.cfg.stationary and alive and audio.source != null:
 			audio.player.global_position = audio.source.global_position
 
 		if alive:
@@ -130,16 +114,14 @@ func _enter_tree():
 func _exit_tree():
 	instance = null
 		
-#---------------------------------------------------------------------------------
-# Internals
-#---------------------------------------------------------------------------------
-func _play_event(event: EAEvent, stream_player, source: Node, output_bus: String = ''):
+#region ::: internals
+func _play_event(event: TeaLeaf, stream_player, source: Node, output_bus: String = ''):
 	var stream := event.get_weighted_random_stream(_rng.randf())    
 	stream_player.name = "AudioPlayback"
 	add_child(stream_player)
 	stream_player.stream = stream
 
-	EventAudioAPI.init_player_from_playback_settings(_rng, stream_player, event.playback_settings)
+	TeaAPI.init_player_from_playback_settings(_rng, stream_player, event.playback_settings)
 	if output_bus != '':
 		stream_player.set_bus(output_bus)
 
@@ -155,36 +137,34 @@ func _play_event(event: EAEvent, stream_player, source: Node, output_bus: String
 		emitter.event = event
 		_active_emitters_2d.append(emitter)
 		return emitter
-	else:
-		var emitter = AudioEmitter3D.new()
-		emitter.player = stream_player
-		emitter.source = source
-		emitter.event = event
-		_active_emitters_3d.append(emitter)
-		return emitter
 	
 
 func _invalidate_trigger_map():
 	_trigger_map = {}
+	polyphony_limit_tracker = {}
+	for bank: TeaBank in _audio_banks:
+		for entry in bank.entries:
+			var key = entry.trigger_tags
+			_trigger_map[key] = entry
+			polyphony_limit_tracker[key] = 0
+
 	
 func _make_trigger_map():
 	_trigger_map = {}
-	for bank: EAEventBank in _audio_banks:
+	for bank: TeaBank in _audio_banks:
 		for entry in bank.entries:
 			var key = entry.trigger_tags
 			_trigger_map[key] = entry
 
-func _find_event_for_trigger(trigger: String) -> EAEvent:
+func _find_event_for_trigger(trigger: String) -> TeaLeaf:
 	if _trigger_map.size() == 0:
 		_make_trigger_map()
 		
 	var current_trigger := trigger
 
 	while current_trigger != "":
-		_log_lookup(current_trigger)
-		var found_entry := _trigger_map.get(current_trigger) as EAEvent
+		var found_entry := _trigger_map.get(current_trigger) as TeaLeaf
 		if found_entry:
-			_log_found(found_entry.trigger_tags)
 			return found_entry
 		var tag_pos := current_trigger.rfind(_separator)
 		if tag_pos >= 0:
@@ -193,22 +173,8 @@ func _find_event_for_trigger(trigger: String) -> EAEvent:
 			current_trigger = ""
 	return null
 	
-func _log_lookup(msg: String):
-	if log_lookups:
-		print("Trying " + msg)
-
-func _log_found(msg: String):
-	if log_lookups:
-		print("Found " + msg)
-	
-func _log_bank_add(msg: String):
-	if log_registrations:
-		print("Registering Bank " + msg)
-	
-func _log_bank_remove(msg: String):
-	if log_registrations:
-		print("Unregistering Bank " + msg)
-	
 func _log_death(msg: String):
-	if log_deaths:
-		print("Killing " + msg)
+	polyphony_limit_tracker[msg] -= 1
+	if polyphony_limit_tracker[msg] < 0:
+		polyphony_limit_tracker[msg] = 0
+#endregion
