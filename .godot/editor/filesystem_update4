@@ -1,0 +1,6 @@
+res://addons/Tea/scenes/bank_resource_line.tscn
+res://main.tscn
+res://addons/Tea/src/ea_stream_edit_control.gd
+res://addons/Tea/src/ea_event_bank_property.gd
+res://addons/Tea/src/ea_event_edit_control.gd
+res://addons/Tea/src/tea_bank.gd

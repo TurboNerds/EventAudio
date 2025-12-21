@@ -1,6 +1,5 @@
 @tool
-extends Resource
-class_name TeaBank
+class_name TeaBank extends Resource
 
 @export var entries: Array[TeaLeaf]
 	

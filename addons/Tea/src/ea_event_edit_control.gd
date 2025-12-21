@@ -1,6 +1,5 @@
 @tool
-extends Container
-class_name EAEventEditControl
+class_name EAEventEditControl extends Container
 
 @export var delete_trigger_button : BaseButton
 @export var play_random_button : BaseButton

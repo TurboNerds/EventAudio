@@ -1,7 +1,5 @@
 @tool
-extends EditorProperty
-
-class_name EAEventBankProperty
+class_name EAEventBankProperty extends EditorProperty
 
 var _audio_bank_line_scene := preload("res://addons/Tea/scenes/bank_line.tscn")
 var _audio_bank_resource_line_scene := preload("res://addons/Tea/scenes/bank_resource_line.tscn")
@@ -12,10 +10,7 @@ var _entries: Array[TeaLeaf]
 var _root_container := VBoxContainer.new()
 var _focus_on_trigger : String = ""
 
-#----------------------------------------------
-# Godot call to update rendering
 func _update_property():
-	# print("updating property")
 	var open_settings := {}
 
 	for control : Node in _root_container.get_children():
@@ -71,7 +66,6 @@ func delete_event(event: TeaLeaf):
 	_resource.delete_entry(event)
 	signal_entry_changed(true)
 
-#--------------------------------------
 func _make_lines(setting_to_restore = {}):
 	var add_button := Button.new()
 	add_button.text = "Add Entry"
