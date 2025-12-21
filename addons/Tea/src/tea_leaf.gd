@@ -1,6 +1,5 @@
 @tool
-extends Resource
-class_name TeaLeaf
+class_name TeaLeaf extends Resource
 
 @export var audio_streams : Array[AudioStream] = []
 @export var probability_weights : Array[float] = []

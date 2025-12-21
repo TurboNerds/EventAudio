@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-EventAudio="*res://addons/event_audio/scenes/event_audio_autoload.tscn"
+Tea="*res://addons/Tea/scenes/event_audio_autoload.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/event_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/Tea/plugin.cfg")
 
 [rendering]
 

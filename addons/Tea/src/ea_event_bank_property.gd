@@ -3,8 +3,8 @@ extends EditorProperty
 
 class_name EAEventBankProperty
 
-var _audio_bank_line_scene := preload("res://addons/event_audio/scenes/bank_line.tscn")
-var _audio_bank_resource_line_scene := preload("res://addons/event_audio/scenes/bank_resource_line.tscn")
+var _audio_bank_line_scene := preload("res://addons/Tea/scenes/bank_line.tscn")
+var _audio_bank_resource_line_scene := preload("res://addons/Tea/scenes/bank_resource_line.tscn")
 
 var _resource: TeaBank
 var _property_name: StringName
