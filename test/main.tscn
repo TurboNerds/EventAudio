@@ -5,5 +5,72 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="sfxTriggerButton" parent="." instance=ExtResource("1_yfdjg")]
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 192.0
+offset_bottom = 192.0
+columns = 3
+
+[node name="sfxTriggerButton" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "1"
 script = ExtResource("2_ik7bt")
+key = "1"
+
+[node name="sfxTriggerButton2" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "2"
+script = ExtResource("2_ik7bt")
+key = "2"
+count = 8
+
+[node name="sfxTriggerButton3" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "1"
+script = ExtResource("2_ik7bt")
+key = "1"
+
+[node name="sfxTriggerButton4" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "3"
+script = ExtResource("2_ik7bt")
+key = "3"
+
+[node name="sfxTriggerButton5" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "3"
+script = ExtResource("2_ik7bt")
+key = "3"
+count = 8
+
+[node name="sfxTriggerButton6" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "3"
+script = ExtResource("2_ik7bt")
+key = "3"
+
+[node name="sfxTriggerButton7" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "1"
+script = ExtResource("2_ik7bt")
+key = "1"
+count = 32
+delay_base_sec = 0.2
+delay_variance_sec = 0.05
+
+[node name="sfxTriggerButton8" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "2"
+script = ExtResource("2_ik7bt")
+key = "2"
+count = 32
+delay_base_sec = 0.2
+delay_variance_sec = 0.05
+
+[node name="sfxTriggerButton9" parent="GridContainer" instance=ExtResource("1_yfdjg")]
+layout_mode = 2
+text = "1"
+script = ExtResource("2_ik7bt")
+key = "1"
+count = 32
+delay_base_sec = 0.2
+delay_variance_sec = 0.05

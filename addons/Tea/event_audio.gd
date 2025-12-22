@@ -17,7 +17,7 @@ var playback_position_fallback: Vector2
 class AudioEmitter2D:
 	var source: Node2D
 	var player: AudioStreamPlayer2D
-	var event: TeaLeaf
+	var leaf: TeaLeaf
 
 var _active_emitters_2d = Array()
 
@@ -66,16 +66,6 @@ static func init_player_from_playback_settings(rng, stream_player, settings: Tea
 	stream_player.volume_db = settings.volume_db
 	stream_player.set_bus(settings.playback_bus)
 
-	if stream_player is AudioStreamPlayer3D:
-		stream_player.unit_size = settings.unit_size
-		stream_player.max_db = settings.max_db
-		stream_player.panning_strength = settings.panning_strength
-
-	elif stream_player is AudioStreamPlayer2D:
-		stream_player.max_distance = settings.max_distance
-		stream_player.attenuation = settings.attenuation
-		stream_player.panning_strength = settings.panning_strength
-
 #endregion
 func _init():
 	_rng = RandomNumberGenerator.new()
@@ -96,18 +86,18 @@ func _process_active_audio(active_audio):
 			audio.player = null
 			alive = false
 		elif audio.source == null:
-			if audio.event.cfg.stop_when_source_dies:
+			if audio.leaf.cfg.stop_when_source_dies:
 				audio.player.stop()
 				alive = false
 
 		# Update the position
-		if not audio.event.cfg.stationary and alive and audio.source != null:
+		if not audio.leaf.cfg.stationary and alive and audio.source != null:
 			audio.player.global_position = audio.source.global_position
 
 		if alive:
 			new_active_audio.append(audio)
 		else:
-			_log_death(audio.event.trigger_tags)
+			_log_death(audio.leaf.trigger_tags)
 	return new_active_audio
 
 func _enter_tree():

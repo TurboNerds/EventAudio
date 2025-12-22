@@ -43,7 +43,7 @@ size_flags_horizontal = 3
 tooltip_text = "The string that will trigger this audio event.
 Trigger strings are chopped right-to-left at the seperator character until a match is found."
 theme = ExtResource("1_euhvk")
-placeholder_text = "key"
+placeholder_text = "key (enter to confirm)"
 select_all_on_focus = true
 caret_blink = true
 

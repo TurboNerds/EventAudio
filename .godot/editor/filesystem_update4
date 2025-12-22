@@ -1,0 +1,7 @@
+res://addons/Tea/scenes/tea_house.tscn
+res://addons/Tea/tea_editor_theme.tres
+res://addons/Tea/scenes/bank_line.tscn
+res://test/sfx_trigger_button.tscn
+res://test/main.tscn
+res://test/sfx_trigger_button.gd
+res://addons/Tea/event_audio.gd

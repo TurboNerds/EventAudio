@@ -1,30 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://be741v81fj3xc"]
+[gd_scene load_steps=2 format=3 uid="uid://be741v81fj3xc"]
 
 [ext_resource type="Script" uid="uid://bngjovqtyrv0v" path="res://addons/Tea/event_audio.gd" id="1_qcm2g"]
-[ext_resource type="Script" uid="uid://dip5tv0y4b0ji" path="res://addons/Tea/src/tea_bag.gd" id="2_0o3i0"]
-[ext_resource type="Script" uid="uid://darqrl2xtdp1g" path="res://addons/Tea/src/tea_leaf.gd" id="3_82yd4"]
-[ext_resource type="Script" uid="uid://dc5tnx5p6nw86" path="res://addons/Tea/src/tea_cfg.gd" id="4_y8t8l"]
-[ext_resource type="Script" uid="uid://bdunjxrxe66j4" path="res://addons/Tea/src/tea_bank.gd" id="5_4lwjf"]
-
-[sub_resource type="Resource" id="Resource_m3e8k"]
-script = ExtResource("4_y8t8l")
-
-[sub_resource type="Resource" id="Resource_kyunn"]
-script = ExtResource("3_82yd4")
-audio_streams = Array[AudioStream]([null])
-probability_weights = Array[float]([1.0])
-cfg = SubResource("Resource_m3e8k")
-metadata/_custom_type_script = "uid://darqrl2xtdp1g"
-
-[sub_resource type="Resource" id="Resource_rxbqa"]
-script = ExtResource("5_4lwjf")
-entries = Array[ExtResource("3_82yd4")]([SubResource("Resource_kyunn")])
-metadata/_custom_type_script = "uid://bdunjxrxe66j4"
 
 [node name="TeaAutoload" type="Node"]
 script = ExtResource("1_qcm2g")
-
-[node name="TeaBag" type="Node" parent="."]
-script = ExtResource("2_0o3i0")
-_audio_bank_resource = SubResource("Resource_rxbqa")
-metadata/_custom_type_script = "uid://dip5tv0y4b0ji"
