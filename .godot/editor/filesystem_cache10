@@ -1,13 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766407776
+::res://::1766408423
 default_bus_layout.tres::AudioBusLayout::4334951856413780541::1766363505::0::1::::<><><>0<>0<><>::
 ::res://addons/::1766360557
-::res://addons/Tea/::1766407793
-icon.png::CompressedTexture2D::9160700496512268742::1766140338::1766360583::1::::<><><>0<>0<>016923255e0e3a5e2a1dad8405f3adb8<>res://.godot/imported/icon.png-919c2676ed0dcdc73ad792921fbcec9a.ctex::
+::res://addons/Tea/::1766408417
 plugin.cfg::TextFile::-1::1766358969::0::1::::<><><>0<>0<><>::
-plugin.gd::GDScript::7908109468532397130::1766360673::0::1::::<>EditorPlugin<><>0<>1<><>::
+plugin.gd::GDScript::7908109468532397130::1766408417::0::1::::<>EditorPlugin<><>0<>1<><>::
 tea.gd::GDScript::3311834500164709539::1766407793::0::1::::TeaAPI<>Node<><>0<>0<><>::
-tea_editor_theme.tres::Theme::1617586969657239536::1766407793::0::1::::<><><>0<>0<><>::
+tea_editor_theme.tres::Theme::1617586969657239536::1766408317::0::1::::<><><>0<>0<><>::
 ::res://addons/Tea/icons/::1766402407
 Add.svg::CompressedTexture2D::8296634452669378734::1766140188::1766360583::1::::<><><>0<>0<>c85722c12cba582e51ce89b39ffed8bf<>res://.godot/imported/Add.svg-d65986dc5bb3cc6b594150db338e3255.ctex::
 Close.svg::CompressedTexture2D::1053074122244247588::1766140188::1766360583::1::::<><><>0<>0<>cfe4e6f979118831a7915569685bfb9e<>res://.godot/imported/Close.svg-75eee5a497afa59f9c4034d47ad13aa9.ctex::
@@ -15,23 +14,23 @@ Play.svg::CompressedTexture2D::4075790205745653808::1766140188::1766360583::1:::
 RandomNumberGenerator.svg::CompressedTexture2D::7301804302533716704::1766140188::1766360583::1::::<><><>0<>0<>e17f31cbb0fdfa8ad7ccf45871ca83b1<>res://.godot/imported/RandomNumberGenerator.svg-b886dfa1124974952a35abc54adb32af.ctex::
 Remove.svg::CompressedTexture2D::7803989030526527131::1766140188::1766360583::1::::<><><>0<>0<>44a6c7c954a551ec86bcabf62433e5a2<>res://.godot/imported/Remove.svg-4089e4387b8d976be4ca35584502d254.ctex::
 Tools.svg::CompressedTexture2D::622350737667719724::1766140188::1766360583::1::::<><><>0<>0<>360408d27ea4492ae53bde066b916e81<>res://.godot/imported/Tools.svg-538418ecb732f5bef84174ccf403a472.ctex::
-::res://addons/Tea/scenes/::1766407793
-bank_line.tscn::PackedScene::5811477555578946996::1766406664::0::1::::<><><>0<>0<><>::uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://doguwu7ux6qft::::res://addons/Tea/src/ea_event_edit_control.gd<>uid://i4qa40akvjaa::::res://addons/Tea/icons/Tools.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg<>uid://dcbbwdp16tdns::::res://addons/Tea/icons/RandomNumberGenerator.svg<>uid://b84km51g3vs0n::::res://addons/Tea/scenes/bank_resource_line.tscn
-bank_resource_line.tscn::PackedScene::4763149694246722767::1766365357::0::1::::<><><>0<>0<><>::uid://ctceo5y5en45w::::res://addons/Tea/src/ea_stream_edit_control.gd<>uid://byclw0utbwbam::::res://addons/Tea/icons/Play.svg<>uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://dqg7mfau2g7ck::::res://addons/Tea/icons/Add.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg
+::res://addons/Tea/scenes/::1766408417
+bank_line.tscn::PackedScene::5811477555578946996::1766408317::0::1::::<><><>0<>0<><>::uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://doguwu7ux6qft::::res://addons/Tea/src/tea_leaf_edit_control.gd<>uid://i4qa40akvjaa::::res://addons/Tea/icons/Tools.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg<>uid://dcbbwdp16tdns::::res://addons/Tea/icons/RandomNumberGenerator.svg<>uid://b84km51g3vs0n::::res://addons/Tea/scenes/bank_resource_line.tscn
+bank_resource_line.tscn::PackedScene::4763149694246722767::1766408325::0::1::::<><><>0<>0<><>::uid://ctceo5y5en45w::::res://addons/Tea/src/tea_stream_edit_control.gd<>uid://byclw0utbwbam::::res://addons/Tea/icons/Play.svg<>uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://dqg7mfau2g7ck::::res://addons/Tea/icons/Add.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg
 tea_autoload.tscn::PackedScene::2735044524964186520::1766407769::0::1::::<><><>0<>0<><>::uid://bngjovqtyrv0v::::res://addons/Tea/tea.gd
-tea_house.tscn::PackedScene::5442405928171900430::1766407793::0::1::::<><><>0<>0<><>::uid://cvwqbw871a8yc::::res://addons/Tea/src/tea_house.gd<>uid://dip5tv0y4b0ji::::res://addons/Tea/src/tea_bag.gd<>uid://darqrl2xtdp1g::::res://addons/Tea/src/tea_leaf.gd<>uid://xdgacjb518et::::res://sfx/fruit toss 3.wav<>uid://dc5tnx5p6nw86::::res://addons/Tea/src/tea_cfg.gd<>uid://dt6ahhbkhc48u::::res://sfx/upgrade get.wav<>uid://cuqameptdo8q6::::res://sfx/fruit toss 1.wav<>uid://bdunjxrxe66j4::::res://addons/Tea/src/tea_bank.gd<>uid://vrxcgniolhh8::::res://sfx/hint appear.wav<>uid://cx84c7ytrkxfs::::res://sfx/upgrade maxed.wav<>uid://4l2ndgdshrle::::res://sfx/laser fire.wav
-::res://addons/Tea/src/::1766406452
-ea_event_bank_inspector.gd::GDScript::8960108847181387836::1766405805::0::1::::<>EditorInspectorPlugin<><>0<>1<><>::
-ea_event_bank_property.gd::GDScript::3815601121372935561::1766405805::0::1::::TeaBankProperty<>EditorProperty<><>0<>1<><>::
-ea_event_edit_control.gd::GDScript::8155546856698777701::1766405805::0::1::::EAEventEditControl<>Container<><>0<>1<><>::
-ea_stream_edit_control.gd::GDScript::6110827635247435246::1766405805::0::1::::EAStreamEditControl<>Container<><>0<>1<><>::
-tea_bag.gd::GDScript::7753595049101381686::1766406212::0::1::::TeaBag<>Node<><>0<>0<><>::
+tea_house.tscn::PackedScene::5442405928171900430::1766408417::0::1::::<><><>0<>0<><>::uid://cvwqbw871a8yc::::res://addons/Tea/src/tea_house.gd<>uid://dip5tv0y4b0ji::::res://addons/Tea/src/tea_bag.gd<>uid://darqrl2xtdp1g::::res://addons/Tea/src/tea_leaf.gd<>uid://xdgacjb518et::::res://sfx/fruit toss 3.wav<>uid://dc5tnx5p6nw86::::res://addons/Tea/src/tea_cfg.gd<>uid://dt6ahhbkhc48u::::res://sfx/upgrade get.wav<>uid://cuqameptdo8q6::::res://sfx/fruit toss 1.wav<>uid://bdunjxrxe66j4::::res://addons/Tea/src/tea_bank.gd<>uid://vrxcgniolhh8::::res://sfx/hint appear.wav<>uid://cx84c7ytrkxfs::::res://sfx/upgrade maxed.wav<>uid://4l2ndgdshrle::::res://sfx/laser fire.wav
+::res://addons/Tea/src/::1766408346
+tea_bag.gd::GDScript::7753595049101381686::1766407954::0::1::::TeaBag<>Node<><>0<>0<><>::
 tea_bank.gd::GDScript::2639081398089844899::1766361000::0::1::::TeaBank<>Resource<><>0<>1<><>::
+tea_bank_inspector.gd::GDScript::8960108847181387836::1766405805::0::1::::<>EditorInspectorPlugin<><>0<>1<><>::
+tea_bank_property.gd::GDScript::3815601121372935561::1766408286::0::1::::TeaBankProperty<>EditorProperty<><>0<>1<><>::
 tea_cfg.gd::GDScript::7362749164265168785::1766363927::0::1::::TeaCfg<>Resource<><>0<>0<><>::
 tea_editor_tools.gd::GDScript::1470826423178724881::1766401995::0::1::::TeaEditorTools<>RefCounted<><>0<>0<><>::
 tea_house.gd::GDScript::6293197860033331734::1766406452::0::1::::<>Node<><>0<>0<><>::
 tea_leaf.gd::GDScript::7195358923816078110::1766360724::0::1::::TeaLeaf<>Resource<><>0<>1<><>::
-::res://sfx/::1766407871
+tea_leaf_edit_control.gd::GDScript::8155546856698777701::1766408286::0::1::::TeaLeafEditControl<>Container<><>0<>1<><>::
+tea_stream_edit_control.gd::GDScript::6110827635247435246::1766408242::0::1::::TeaStreamEditControl<>Container<><>0<>1<><>::
+::res://sfx/::1766407888
 fruit toss 1.wav::AudioStreamWAV::6209669947872002819::1766407858::1766407860::1::::<><><>0<>0<>4aedfc181eecb7f3c7b383136b5bc37f<>res://.godot/imported/fruit toss 1.wav-e2dde420d8fadc79097c0b1395a8af4b.sample::
 fruit toss 2.wav::AudioStreamWAV::3002977794356582270::1766407865::1766407866::1::::<><><>0<>0<>a29617785fe2b862c407048bdd87e839<>res://.godot/imported/fruit toss 2.wav-c54c106320dacfee77542fb32044eba0.sample::
 fruit toss 3.wav::AudioStreamWAV::1620900957930048687::1766407871::1766407888::1::::<><><>0<>0<>d7c66640ae2bbdfbb617d8ee6ad11c01<>res://.godot/imported/fruit toss 3.wav-43c7453c8b3aeed7d843e9c7bdacbcf3.sample::

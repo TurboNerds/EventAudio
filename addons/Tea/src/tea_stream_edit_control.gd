@@ -1,5 +1,5 @@
 @tool
-class_name EAStreamEditControl extends Container
+class_name TeaStreamEditControl extends Container
 
 @export var delete_event_button : Button
 @export var add_stream_button : Button

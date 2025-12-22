@@ -1,5 +1,5 @@
 @tool
-class_name EAEventEditControl extends Container
+class_name TeaLeafEditControl extends Container
 
 @export var delete_trigger_button : BaseButton
 @export var play_random_button : BaseButton

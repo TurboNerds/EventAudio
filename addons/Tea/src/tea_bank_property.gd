@@ -14,7 +14,7 @@ func _update_property():
 	var open_settings := {}
 
 	for control : Node in _root_container.get_children():
-		if control is EAEventEditControl and control.is_settings_open():
+		if control is TeaLeafEditControl and control.is_settings_open():
 			open_settings[control.get_event()] = true
 			
 		_root_container.remove_child(control)
@@ -30,9 +30,9 @@ func _update_property():
 
 	# Find the trigger we were editing previously and select it.
 	for control : Control in _root_container.get_children():
-		if control is not EAEventEditControl:
+		if control is not TeaLeafEditControl:
 			continue
-		var line = control as EAEventEditControl
+		var line = control as TeaLeafEditControl
 		if line.trigger_name_edit.text == _focus_on_trigger:
 			EditorInterface.get_inspector().ensure_control_visible(line.trigger_name_edit)
 			break
@@ -84,12 +84,12 @@ func _make_lines(setting_to_restore = {}):
 		_makeEntryLine(entry, settings_open) 
 
 func _makeEntryLine(entry: TeaLeaf, settings_open: bool):
-	var line := _audio_bank_line_scene.instantiate() as EAEventEditControl
+	var line := _audio_bank_line_scene.instantiate() as TeaLeafEditControl
 	_root_container.add_child(line)
 	line.create(self, entry, settings_open)
 
 	for c1: int in entry.audio_streams.size():
-		var resource_line := _audio_bank_resource_line_scene.instantiate() as EAStreamEditControl
+		var resource_line := _audio_bank_resource_line_scene.instantiate() as TeaStreamEditControl
 		line.stream_settings_list.add_child(resource_line)
 		resource_line.create(self, entry, c1, entry.audio_streams.size() == 1)
 	

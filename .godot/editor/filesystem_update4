@@ -1,5 +1,2 @@
 res://addons/Tea/scenes/tea_house.tscn
 res://addons/Tea/tea_editor_theme.tres
-res://addons/Tea/tea.gd
-res://addons/Tea/scenes/bank_line.tscn
-res://addons/Tea/src/tea_bag.gd

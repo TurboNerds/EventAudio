@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://co2eglljfwoxo"]
 
 [ext_resource type="Theme" uid="uid://xbtok0i0r2qm" path="res://addons/Tea/tea_editor_theme.tres" id="1_euhvk"]
-[ext_resource type="Script" uid="uid://doguwu7ux6qft" path="res://addons/Tea/src/ea_event_edit_control.gd" id="1_melcq"]
+[ext_resource type="Script" uid="uid://doguwu7ux6qft" path="res://addons/Tea/src/tea_leaf_edit_control.gd" id="1_melcq"]
 [ext_resource type="Texture2D" uid="uid://i4qa40akvjaa" path="res://addons/Tea/icons/Tools.svg" id="2_31ihp"]
 [ext_resource type="Texture2D" uid="uid://djgktanb5swk6" path="res://addons/Tea/icons/Remove.svg" id="3_euhvk"]
 [ext_resource type="Texture2D" uid="uid://dcbbwdp16tdns" path="res://addons/Tea/icons/RandomNumberGenerator.svg" id="3_ikqib"]
