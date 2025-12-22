@@ -16,8 +16,12 @@ var playback_position_fallback: Vector2
 
 class AudioEmitter2D:
 	var source: Node2D
-	var player: AudioStreamPlayer2D
+	var player: AudioStreamPlayer2D:
+		set(_player):
+			if _player: _player.finished.connect(func(): finished.emit())
 	var leaf: TeaLeaf
+	
+	signal finished
 
 var _active_emitters_2d = Array()
 
@@ -107,7 +111,7 @@ func _exit_tree():
 	instance = null
 		
 #region ::: internals
-func _play_event(leaf: TeaLeaf, stream_player, source: Node):
+func _play_event(leaf: TeaLeaf, stream_player: AudioStreamPlayer2D, source: Node):
 	var stream := leaf.get_weighted_random_stream(_rng.randf())    
 	stream_player.name = "AudioPlayback"
 	add_child(stream_player)
@@ -117,16 +121,16 @@ func _play_event(leaf: TeaLeaf, stream_player, source: Node):
 
 	if source:
 		stream_player.global_position = source.global_position
-
+		
 	stream_player.play()
 	
-	if stream_player is AudioStreamPlayer2D:
-		var emitter := AudioEmitter2D.new()
-		emitter.player = stream_player
-		emitter.source = source
-		emitter.leaf = leaf
-		_active_emitters_2d.append(emitter)
-		return emitter
+	var emitter := AudioEmitter2D.new()
+	stream_player.finished.connect(func(): emitter.finished.emit())
+	emitter.player = stream_player
+	emitter.source = source
+	emitter.leaf = leaf
+	_active_emitters_2d.append(emitter)
+	return emitter
 	
 
 func _invalidate_trigger_map():
