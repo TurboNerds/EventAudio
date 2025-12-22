@@ -9,14 +9,14 @@ var weight_editor : EditorSpinSlider
 var audio_selector : EditorResourcePicker
 	
 var _stream_id : int
-var _event : TeaLeaf
-var _bank_inspector : EAEventBankProperty
+var _leaf : TeaLeaf
+var _bank_inspector : TeaBankProperty
 
-func create(bank_inspector: EAEventBankProperty, event: TeaLeaf, stream_id: int, primary: bool) -> void:
+func create(bank_inspector: TeaBankProperty, event: TeaLeaf, stream_id: int, primary: bool) -> void:
 	# When this is the primary resource, we don't want to delete it.
 	# add_stream_button.visible = true
 	_stream_id = stream_id
-	_event = event
+	_leaf = event
 	_bank_inspector = bank_inspector
 
 	if primary:
@@ -27,13 +27,13 @@ func create(bank_inspector: EAEventBankProperty, event: TeaLeaf, stream_id: int,
 	play_button.pressed.connect(_on_play_button_clicked)
 
 	audio_selector.resource_changed.connect(_on_stream_changed)
-	audio_selector.edited_resource = _event.audio_streams[_stream_id]
+	audio_selector.edited_resource = _leaf.audio_streams[_stream_id]
 		
 	add_stream_button.pressed.connect(_on_add_resource_button_clicked)
 	delete_event_button.pressed.connect(_on_delete_resource_button_clicked)
 
 	weight_editor.value_changed.connect(_on_stream_weight_changed)
-	weight_editor.value = _event.probability_weights[_stream_id]
+	weight_editor.value = _leaf.probability_weights[_stream_id]
 	_make_audio_picker_pretty()
 
 func _ready() -> void:
@@ -109,22 +109,22 @@ func _make_audio_picker_pretty():
 			child.get_parent().remove_child(child)
 
 func _on_play_button_clicked():
-	var stream := _event.audio_streams[_stream_id]
+	var stream := _leaf.audio_streams[_stream_id]
 	if stream:
-		EAEditorTools.play_sound(_event, stream)
+		TeaEditorTools.play_sound(_leaf, stream)
 
 func _on_stream_weight_changed(val):
-	_event.probability_weights[_stream_id] = val
+	_leaf.probability_weights[_stream_id] = val
 	_bank_inspector.signal_entry_changed(false)
 
 func _on_add_resource_button_clicked():
-	_event.add_stream(_stream_id)
+	_leaf.add_stream(_stream_id)
 	_bank_inspector.signal_entry_changed(true)
 
 func _on_delete_resource_button_clicked():
-	_event.remove_stream(_stream_id)
+	_leaf.remove_stream(_stream_id)
 	_bank_inspector.signal_entry_changed(true)
 
 func _on_stream_changed(res: Resource):
-	_event.audio_streams[_stream_id] = res as AudioStream
+	_leaf.audio_streams[_stream_id] = res as AudioStream
 	_bank_inspector.signal_entry_changed(false)

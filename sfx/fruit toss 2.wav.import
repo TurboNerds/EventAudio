@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi1wut835f1y5"
+path="res://.godot/imported/fruit toss 2.wav-c54c106320dacfee77542fb32044eba0.sample"
+
+[deps]
+
+source_file="res://sfx/fruit toss 2.wav"
+dest_files=["res://.godot/imported/fruit toss 2.wav-c54c106320dacfee77542fb32044eba0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

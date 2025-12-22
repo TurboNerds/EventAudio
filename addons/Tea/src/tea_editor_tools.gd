@@ -1,4 +1,5 @@
-class_name 	EAEditorTools
+class_name TeaEditorTools
+
 static var _editor_stream_player : AudioStreamPlayer
 static var _global_rng : RandomNumberGenerator
 

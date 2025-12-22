@@ -1,5 +1,5 @@
 @tool
-class_name EAEventBankProperty extends EditorProperty
+class_name TeaBankProperty extends EditorProperty
 
 var _audio_bank_line_scene := preload("res://addons/Tea/scenes/bank_line.tscn")
 var _audio_bank_resource_line_scene := preload("res://addons/Tea/scenes/bank_resource_line.tscn")
@@ -51,7 +51,7 @@ func _enter_tree():
 	set_bottom_editor(_root_container)
 
 func _exit_tree() -> void:
-	EAEditorTools.stop_sound()
+	TeaEditorTools.stop_sound()
 
 func sort_bank():
 	_resource.sort_by_trigger()
@@ -98,6 +98,6 @@ func _on_add_entry_button_clicked():
 	signal_entry_changed(true)
 
 func _on_stop_button_clicked():
-	EAEditorTools.stop_sound()
+	TeaEditorTools.stop_sound()
 
 	

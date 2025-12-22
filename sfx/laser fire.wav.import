@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4l2ndgdshrle"
+path="res://.godot/imported/laser fire.wav-8fd458a12c32bc27925045d67d4b36ad.sample"
+
+[deps]
+
+source_file="res://sfx/laser fire.wav"
+dest_files=["res://.godot/imported/laser fire.wav-8fd458a12c32bc27925045d67d4b36ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

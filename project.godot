@@ -17,7 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Tea="*res://addons/Tea/scenes/event_audio_autoload.tscn"
+Tea="*res://addons/Tea/scenes/tea_autoload.tscn"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 
 [editor_plugins]
 

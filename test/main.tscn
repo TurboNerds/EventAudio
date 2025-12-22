@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2lc5hjimnq4q"]
+
+[ext_resource type="PackedScene" uid="uid://cr4ax6ofu2k74" path="res://test/sfx_trigger_button.tscn" id="1_yfdjg"]
+[ext_resource type="Script" uid="uid://dgdnoivj80dwy" path="res://test/sfx_trigger_button.gd" id="2_ik7bt"]
+
+[node name="Main" type="Node2D"]
+
+[node name="sfxTriggerButton" parent="." instance=ExtResource("1_yfdjg")]
+script = ExtResource("2_ik7bt")

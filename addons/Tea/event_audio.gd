@@ -12,6 +12,8 @@ var _rng: RandomNumberGenerator
 var _audio_banks: Array[TeaBank]
 var polyphony_limit_tracker: Dictionary
 
+var playback_position_fallback: Vector2
+
 class AudioEmitter2D:
 	var source: Node2D
 	var player: AudioStreamPlayer2D
@@ -30,13 +32,13 @@ func set_global_suppress_sfx(option: bool = true):
 static func get_instance() -> TeaAPI:
 	return instance
 
-func play_2d(trigger: String, source: Node2D, output_bus: String = '') -> AudioEmitter2D:
-	var event := _find_event_for_trigger(trigger)
-	if event == null:
+func play(trigger: String, source: Node2D = null) -> AudioEmitter2D:
+	var leaf := _find_event_for_trigger(trigger)
+	if leaf == null:
 		return null
 
 	var stream_player = AudioStreamPlayer2D.new()
-	return _play_event(event, stream_player, source, output_bus)
+	return _play_event(leaf, stream_player, source)
 
 func stop(emitter):
 	if emitter.player != null:
@@ -115,15 +117,13 @@ func _exit_tree():
 	instance = null
 		
 #region ::: internals
-func _play_event(event: TeaLeaf, stream_player, source: Node, output_bus: String = ''):
-	var stream := event.get_weighted_random_stream(_rng.randf())    
+func _play_event(leaf: TeaLeaf, stream_player, source: Node):
+	var stream := leaf.get_weighted_random_stream(_rng.randf())    
 	stream_player.name = "AudioPlayback"
 	add_child(stream_player)
 	stream_player.stream = stream
 
-	TeaAPI.init_player_from_playback_settings(_rng, stream_player, event.playback_settings)
-	if output_bus != '':
-		stream_player.set_bus(output_bus)
+	TeaAPI.init_player_from_playback_settings(_rng, stream_player, leaf.cfg)
 
 	if source:
 		stream_player.global_position = source.global_position
@@ -134,7 +134,7 @@ func _play_event(event: TeaLeaf, stream_player, source: Node, output_bus: String
 		var emitter := AudioEmitter2D.new()
 		emitter.player = stream_player
 		emitter.source = source
-		emitter.event = event
+		emitter.leaf = leaf
 		_active_emitters_2d.append(emitter)
 		return emitter
 	

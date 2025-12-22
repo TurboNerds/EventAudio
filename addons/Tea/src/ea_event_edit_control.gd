@@ -9,9 +9,9 @@ class_name EAEventEditControl extends Container
 var _exclude_props = {"resource_local_to_scene": true, "Resource": true, "resource_name": true, "script": true}
 var _settings_panel : Control
 var _event : TeaLeaf
-var _bank_inspector : EAEventBankProperty
+var _bank_inspector : TeaBankProperty
 
-func create(bank_inspector: EAEventBankProperty, event: TeaLeaf, open_settings: bool) -> void:
+func create(bank_inspector: TeaBankProperty, event: TeaLeaf, open_settings: bool) -> void:
 	_event = event
 	_bank_inspector = bank_inspector
 
@@ -69,10 +69,10 @@ func _on_trigger_submitted(trigger: String):
 		_bank_inspector.signal_entry_changed(true)
 
 func _on_play_random_button_clicked():
-	var roll := EAEditorTools.get_global_rng().randf_range(0, 1.0)
+	var roll := TeaEditorTools.get_global_rng().randf_range(0, 1.0)
 	var stream := _event.get_weighted_random_stream(roll)
 	if stream:
-		EAEditorTools.play_sound(_event, stream)
+		TeaEditorTools.play_sound(_event, stream)
 
 func _toggle_settings_panel():
 	if _settings_panel:
@@ -85,6 +85,6 @@ func _toggle_settings_panel():
 		self.add_sibling(panel)
 
 func _make_settings_panel() -> Container:
-	return 	EAEditorTools.make_property_panel(
+	return 	TeaEditorTools.make_property_panel(
 		_event.cfg, "Playback Settings", _exclude_props, _on_settings_entry_changed)
 	

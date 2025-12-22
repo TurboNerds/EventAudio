@@ -1,32 +1,52 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766360912
+::res://::1766406268
+default_bus_layout.tres::AudioBusLayout::4334951856413780541::1766363505::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::3333428211974376931::1766140519::1766140600::1::::<><><>0<>0<>05d2a1470d5ab0048d5dc2aba30d8ed1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::9077244374350255506::1766360427::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1766140188::0::1::::<><><>0<>0<><>::
 ::res://addons/::1766360557
-::res://addons/Tea/::1766360616
-event_audio.gd::GDScript::3311834500164709539::1766360396::0::1::::TeaAPI<>Node<><>0<>0<><>::
+::res://addons/Tea/::1766406263
+event_audio.gd::GDScript::3311834500164709539::1766405805::0::1::::TeaAPI<>Node<><>0<>0<><>::
 icon.png::CompressedTexture2D::9160700496512268742::1766140338::1766360583::1::::<><><>0<>0<>016923255e0e3a5e2a1dad8405f3adb8<>res://.godot/imported/icon.png-919c2676ed0dcdc73ad792921fbcec9a.ctex::
 plugin.cfg::TextFile::-1::1766358969::0::1::::<><><>0<>0<><>::
 plugin.gd::GDScript::7908109468532397130::1766360673::0::1::::<>EditorPlugin<><>0<>1<><>::
-::res://addons/Tea/icons/::1766360583
+tea_editor_theme.tres::Theme::1617586969657239536::1766406263::0::1::::<><><>0<>0<><>::
+::res://addons/Tea/icons/::1766402407
 Add.svg::CompressedTexture2D::8296634452669378734::1766140188::1766360583::1::::<><><>0<>0<>c85722c12cba582e51ce89b39ffed8bf<>res://.godot/imported/Add.svg-d65986dc5bb3cc6b594150db338e3255.ctex::
 Close.svg::CompressedTexture2D::1053074122244247588::1766140188::1766360583::1::::<><><>0<>0<>cfe4e6f979118831a7915569685bfb9e<>res://.godot/imported/Close.svg-75eee5a497afa59f9c4034d47ad13aa9.ctex::
 Play.svg::CompressedTexture2D::4075790205745653808::1766140188::1766360583::1::::<><><>0<>0<>e0f495595800c9554d8ebc65fa58f8f9<>res://.godot/imported/Play.svg-237eb5942b68ade3b64608f8ddb53068.ctex::
 RandomNumberGenerator.svg::CompressedTexture2D::7301804302533716704::1766140188::1766360583::1::::<><><>0<>0<>e17f31cbb0fdfa8ad7ccf45871ca83b1<>res://.godot/imported/RandomNumberGenerator.svg-b886dfa1124974952a35abc54adb32af.ctex::
 Remove.svg::CompressedTexture2D::7803989030526527131::1766140188::1766360583::1::::<><><>0<>0<>44a6c7c954a551ec86bcabf62433e5a2<>res://.godot/imported/Remove.svg-4089e4387b8d976be4ca35584502d254.ctex::
 Tools.svg::CompressedTexture2D::622350737667719724::1766140188::1766360583::1::::<><><>0<>0<>360408d27ea4492ae53bde066b916e81<>res://.godot/imported/Tools.svg-538418ecb732f5bef84174ccf403a472.ctex::
-::res://addons/Tea/scenes/::1766360805
-bank_line.tscn::PackedScene::5811477555578946996::1766140601::0::1::::<><><>0<>0<><>::uid://pad8hlsq2shw::::res://addons/event_audio/icons/Close.svg<>uid://doguwu7ux6qft::::res://addons/event_audio/src/ea_event_edit_control.gd<>uid://i4qa40akvjaa::::res://addons/event_audio/icons/Tools.svg<>uid://dcbbwdp16tdns::::res://addons/event_audio/icons/RandomNumberGenerator.svg<>uid://b84km51g3vs0n::::res://addons/event_audio/scenes/bank_resource_line.tscn
-bank_resource_line.tscn::PackedScene::4763149694246722767::1766140602::0::1::::<><><>0<>0<><>::uid://ctceo5y5en45w::::res://addons/event_audio/src/ea_stream_edit_control.gd<>uid://byclw0utbwbam::::res://addons/event_audio/icons/Play.svg<>uid://dqg7mfau2g7ck::::res://addons/event_audio/icons/Add.svg<>uid://djgktanb5swk6::::res://addons/event_audio/icons/Remove.svg
-event_audio_autoload.tscn::PackedScene::2735044524964186520::1766360805::0::1::::<><><>0<>0<><>::uid://bngjovqtyrv0v::::res://addons/Tea/event_audio.gd
-::res://addons/Tea/src/::1766360781
-ea_editor_tools.gd::GDScript::1470826423178724881::1766360344::0::1::::EAEditorTools<>RefCounted<><>0<>0<><>::
-ea_event_bank_inspector.gd::GDScript::8960108847181387836::1766359951::0::1::::<>EditorInspectorPlugin<><>0<>1<><>::
-ea_event_bank_mounter.gd::GDScript::7753595049101381686::1766359951::0::1::::EAEventBankMounter<>Node<><>0<>0<><>::
-ea_event_bank_property.gd::GDScript::3815601121372935561::1766360781::0::1::::EAEventBankProperty<>EditorProperty<><>0<>1<><>::
-ea_event_edit_control.gd::GDScript::8155546856698777701::1766360345::0::1::::EAEventEditControl<>Container<><>0<>1<><>::
-ea_stream_edit_control.gd::GDScript::6110827635247435246::1766360205::0::1::::EAStreamEditControl<>Container<><>0<>1<><>::
-tea_bank.gd::GDScript::2639081398089844899::1766360263::0::1::::TeaBank<>Resource<><>0<>1<><>::
-tea_cfg.gd::GDScript::7362749164265168785::1766359848::0::1::::TeaCfg<>Resource<><>0<>0<><>::
+::res://addons/Tea/scenes/::1766406263
+bank_line.tscn::PackedScene::5811477555578946996::1766402135::0::1::::<><><>0<>0<><>::uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://doguwu7ux6qft::::res://addons/Tea/src/ea_event_edit_control.gd<>uid://i4qa40akvjaa::::res://addons/Tea/icons/Tools.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg<>uid://dcbbwdp16tdns::::res://addons/Tea/icons/RandomNumberGenerator.svg<>uid://b84km51g3vs0n::::res://addons/Tea/scenes/bank_resource_line.tscn
+bank_resource_line.tscn::PackedScene::4763149694246722767::1766365357::0::1::::<><><>0<>0<><>::uid://ctceo5y5en45w::::res://addons/Tea/src/ea_stream_edit_control.gd<>uid://byclw0utbwbam::::res://addons/Tea/icons/Play.svg<>uid://xbtok0i0r2qm::::res://addons/Tea/tea_editor_theme.tres<>uid://dqg7mfau2g7ck::::res://addons/Tea/icons/Add.svg<>uid://djgktanb5swk6::::res://addons/Tea/icons/Remove.svg
+tea_autoload.tscn::PackedScene::2735044524964186520::1766406263::0::1::::<><><>0<>0<><>::uid://bngjovqtyrv0v::::res://addons/Tea/event_audio.gd<>uid://dip5tv0y4b0ji::::res://addons/Tea/src/tea_bag.gd<>uid://darqrl2xtdp1g::::res://addons/Tea/src/tea_leaf.gd<>uid://dc5tnx5p6nw86::::res://addons/Tea/src/tea_cfg.gd<>uid://bdunjxrxe66j4::::res://addons/Tea/src/tea_bank.gd
+::res://addons/Tea/src/::1766406212
+ea_event_bank_inspector.gd::GDScript::8960108847181387836::1766405805::0::1::::<>EditorInspectorPlugin<><>0<>1<><>::
+ea_event_bank_property.gd::GDScript::3815601121372935561::1766405805::0::1::::TeaBankProperty<>EditorProperty<><>0<>1<><>::
+ea_event_edit_control.gd::GDScript::8155546856698777701::1766405805::0::1::::EAEventEditControl<>Container<><>0<>1<><>::
+ea_stream_edit_control.gd::GDScript::6110827635247435246::1766405805::0::1::::EAStreamEditControl<>Container<><>0<>1<><>::
+tea_bag.gd::GDScript::7753595049101381686::1766406212::0::1::::TeaBag<>Node<><>0<>0<><>::
+tea_bank.gd::GDScript::2639081398089844899::1766361000::0::1::::TeaBank<>Resource<><>0<>1<><>::
+tea_cfg.gd::GDScript::7362749164265168785::1766363927::0::1::::TeaCfg<>Resource<><>0<>0<><>::
+tea_editor_tools.gd::GDScript::1470826423178724881::1766401995::0::1::::TeaEditorTools<>RefCounted<><>0<>0<><>::
 tea_leaf.gd::GDScript::7195358923816078110::1766360724::0::1::::TeaLeaf<>Resource<><>0<>1<><>::
+::res://sfx/::1766401942
+fruit toss 1.wav::AudioStreamWAV::6209669947872002819::1766401942::1766401942::1::::<><><>0<>0<>4aedfc181eecb7f3c7b383136b5bc37f<>res://.godot/imported/fruit toss 1.wav-e2dde420d8fadc79097c0b1395a8af4b.sample::
+fruit toss 2.wav::AudioStreamWAV::3002977794356582270::1766401942::1766401942::1::::<><><>0<>0<>a29617785fe2b862c407048bdd87e839<>res://.godot/imported/fruit toss 2.wav-c54c106320dacfee77542fb32044eba0.sample::
+fruit toss 3.wav::AudioStreamWAV::1620900957930048687::1766401942::1766401942::1::::<><><>0<>0<>d7c66640ae2bbdfbb617d8ee6ad11c01<>res://.godot/imported/fruit toss 3.wav-43c7453c8b3aeed7d843e9c7bdacbcf3.sample::
+hint appear.wav::AudioStreamWAV::1510460536244325795::1766401924::1766401925::1::::<><><>0<>0<>5bbadf086c7433a38af0bc0d2410d50e<>res://.godot/imported/hint appear.wav-163ffb993f1407b6af325a14c9d7d437.sample::
+laser fire.wav::AudioStreamWAV::2059847361922587254::1766401942::1766401942::1::::<><><>0<>0<>9aada5c4062cccbd687f1b28c136cecc<>res://.godot/imported/laser fire.wav-8fd458a12c32bc27925045d67d4b36ad.sample::
+sawblade spin.wav::AudioStreamWAV::3343111390554362972::1766401942::1766401942::1::::<><><>0<>0<>1b0cb237b76774010852292e0c46a5cb<>res://.godot/imported/sawblade spin.wav-57c1a456808d3ebdf59fd2214295117a.sample::
+score blip 1.wav::AudioStreamWAV::8014012900916498232::1766401942::1766401942::1::::<><><>0<>0<>972abb30f4023e48feb4a8e816e32274<>res://.godot/imported/score blip 1.wav-eb102fc388def9f7e83174b775b3d016.sample::
+score blip 2.wav::AudioStreamWAV::910707577808173079::1766401942::1766401942::1::::<><><>0<>0<>f38d6465b35cf3798ff89ef27444e7d2<>res://.godot/imported/score blip 2.wav-d729c4fb8cc1343996a74559dc9afba3.sample::
+score blip 3.wav::AudioStreamWAV::3819165397515310256::1766401942::1766401942::1::::<><><>0<>0<>c31d5ce8bf7415d7c7f8ebbecae9bfd2<>res://.godot/imported/score blip 3.wav-c1082ec186e42fd525abfbbb56708309.sample::
+score blip 4.wav::AudioStreamWAV::5771906904198413766::1766401942::1766401942::1::::<><><>0<>0<>2c4f1ad692e3ee27090c48b1b03e9bc5<>res://.godot/imported/score blip 4.wav-2c1a8e95fe399a01533716907bf41fba.sample::
+sugar dispense.wav::AudioStreamWAV::1121904829636375554::1766401942::1766401942::1::::<><><>0<>0<>46eda23698e84c23897d1baa26065132<>res://.godot/imported/sugar dispense.wav-861c9c06ad0cedd06930da550fc531b7.sample::
+upgrade available.wav::AudioStreamWAV::8987110263140690974::1766401924::1766401925::1::::<><><>0<>0<>28ae01fa88d0cf284dc4c21f199e262f<>res://.godot/imported/upgrade available.wav-92217fab48401e4e3b3b92b1cfdfce87.sample::
+upgrade get.wav::AudioStreamWAV::8556858660807183082::1766401942::1766401942::1::::<><><>0<>0<>3f44251742ad9633a3424ccfc0d7424a<>res://.godot/imported/upgrade get.wav-05f2843813b7a895adecc23e7cdb8273.sample::
+upgrade maxed.wav::AudioStreamWAV::6457075320031877976::1766401942::1766401942::1::::<><><>0<>0<>8797c46146fe25c2bba836f38249f568<>res://.godot/imported/upgrade maxed.wav-8cd7c0cf2aae604e50acf360160ce85c.sample::
+::res://test/::1766406009
+main.tscn::PackedScene::9077244374350255506::1766406009::0::1::::<><><>0<>0<><>::uid://cr4ax6ofu2k74::::res://test/sfx_trigger_button.tscn<>uid://dgdnoivj80dwy::::res://test/sfx_trigger_button.gd
+sfx_trigger_button.gd::GDScript::7587403021272008008::1766406009::0::1::::SFXTriggerButton<>Button<><>0<>0<><>::
+sfx_trigger_button.tscn::PackedScene::6025961387466392765::1766405964::0::1::::<><><>0<>0<><>::
