@@ -5,12 +5,41 @@ class_name TeaStreamEditControl extends Container
 @export var add_stream_button : Button
 @export var play_button : Button
 @export var audio_label : Label
+@export var stream_info: Label
 var weight_editor : EditorSpinSlider
 var audio_selector : EditorResourcePicker
 	
 var _stream_id : int
 var _leaf : TeaLeaf
 var _bank_inspector : TeaBankProperty
+
+func build_stream_info(leaf: TeaLeaf) -> String:
+	var string: String = ""
+	
+	var info_format: String = "?"
+	var info_sample_rate: int = 0
+	var info_channels: String = "?"
+	var info_length: float = 0
+	
+	var stream: AudioStream
+	if leaf == null:
+		return "null"
+	if leaf.audio_streams.is_empty():
+		return "empty"
+	else:
+		stream = leaf.audio_streams[0]
+		if stream is AudioStreamWAV:
+			info_format = "wav"
+			info_sample_rate = stream.mix_rate
+			info_channels = "2ch" if stream.stereo else "1ch"
+			info_length = stream.get_length()
+		elif stream is AudioStreamOggVorbis:
+			info_format = "ogg"
+			info_channels = "1ch" if stream.is_monophonic() else "mch"
+			info_length = stream.get_length()
+	
+	string = "%s %.2f s\n%s %dk" % [info_format, info_length, info_channels, info_sample_rate/1000]
+	return string
 
 func create(bank_inspector: TeaBankProperty, event: TeaLeaf, stream_id: int, primary: bool) -> void:
 	# When this is the primary resource, we don't want to delete it.
@@ -35,6 +64,7 @@ func create(bank_inspector: TeaBankProperty, event: TeaLeaf, stream_id: int, pri
 	weight_editor.value_changed.connect(_on_stream_weight_changed)
 	weight_editor.value = _leaf.probability_weights[_stream_id]
 	_make_audio_picker_pretty()
+	stream_info.text = build_stream_info(event)
 
 func _ready() -> void:
 	get_node("WeightSliderContainer").add_child(weight_editor)

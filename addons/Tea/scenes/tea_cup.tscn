@@ -1,9 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjslvo33sfy8e"]
+[gd_scene load_steps=24 format=3 uid="uid://cjslvo33sfy8e"]
 
-[ext_resource type="Script" uid="uid://cvwqbw871a8yc" path="res://addons/Tea/src/tea_house.gd" id="1_lni32"]
+[ext_resource type="Script" uid="uid://cvwqbw871a8yc" path="res://addons/Tea/src/tea_cup.gd" id="1_lni32"]
 [ext_resource type="Script" uid="uid://dip5tv0y4b0ji" path="res://addons/Tea/src/tea_bag.gd" id="2_25ekq"]
 [ext_resource type="Script" uid="uid://darqrl2xtdp1g" path="res://addons/Tea/src/tea_leaf.gd" id="3_yjivr"]
-[ext_resource type="AudioStream" uid="uid://cuqameptdo8q6" path="res://sfx/fruit toss 1.wav" id="4_3ow0j"]
 [ext_resource type="Script" uid="uid://dc5tnx5p6nw86" path="res://addons/Tea/src/tea_cfg.gd" id="5_6otjd"]
 [ext_resource type="AudioStream" uid="uid://xdgacjb518et" path="res://sfx/fruit toss 3.wav" id="6_m4poh"]
 [ext_resource type="AudioStream" uid="uid://dt6ahhbkhc48u" path="res://sfx/upgrade get.wav" id="7_f6d7a"]
@@ -17,7 +16,7 @@ script = ExtResource("5_6otjd")
 
 [sub_resource type="Resource" id="Resource_8ryvk"]
 script = ExtResource("3_yjivr")
-audio_streams = Array[AudioStream]([ExtResource("4_3ow0j")])
+audio_streams = Array[AudioStream]([null])
 probability_weights = Array[float]([1.0])
 trigger_tags = "1"
 cfg = SubResource("Resource_m8r2s")
