@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://d2lc5hjimnq4q"]
+[gd_scene load_steps=8 format=3 uid="uid://d2lc5hjimnq4q"]
+
+[ext_resource type="Script" uid="uid://dip5tv0y4b0ji" path="res://addons/Tea/src/ea_event_bank_mounter.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://darqrl2xtdp1g" path="res://addons/Tea/src/tea_leaf.gd" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://dc5tnx5p6nw86" path="res://addons/Tea/src/tea_cfg.gd" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://bdunjxrxe66j4" path="res://addons/Tea/src/tea_bank.gd" id="4_272bh"]
+
+[sub_resource type="Resource" id="Resource_1bvp3"]
+script = ExtResource("3_7mycd")
+
+[sub_resource type="Resource" id="Resource_lquwl"]
+script = ExtResource("2_lquwl")
+audio_streams = Array[AudioStream]([null, null])
+probability_weights = Array[float]([1.0, 1.0])
+cfg = SubResource("Resource_1bvp3")
+
+[sub_resource type="Resource" id="Resource_4c57u"]
+script = ExtResource("4_272bh")
+entries = Array[ExtResource("2_lquwl")]([SubResource("Resource_lquwl")])
+metadata/_custom_type_script = "uid://bdunjxrxe66j4"
 
 [node name="Main" type="Node2D"]
+
+[node name="EAEventBankMounter" type="Node" parent="."]
+script = ExtResource("1_1bvp3")
+_audio_bank_resource = SubResource("Resource_4c57u")
+metadata/_custom_type_script = "uid://dip5tv0y4b0ji"

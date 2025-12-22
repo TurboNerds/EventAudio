@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b84km51g3vs0n"]
+[gd_scene load_steps=6 format=3 uid="uid://b84km51g3vs0n"]
 
 [ext_resource type="Script" uid="uid://ctceo5y5en45w" path="res://addons/Tea/src/ea_stream_edit_control.gd" id="1_fwtai"]
 [ext_resource type="Texture2D" uid="uid://byclw0utbwbam" path="res://addons/Tea/icons/Play.svg" id="2_jis6r"]
+[ext_resource type="Theme" uid="uid://xbtok0i0r2qm" path="res://addons/Tea/tea_editor_theme.tres" id="2_r75pk"]
 [ext_resource type="Texture2D" uid="uid://dqg7mfau2g7ck" path="res://addons/Tea/icons/Add.svg" id="3_aknch"]
 [ext_resource type="Texture2D" uid="uid://djgktanb5swk6" path="res://addons/Tea/icons/Remove.svg" id="4_il77p"]
 
@@ -10,24 +11,47 @@ offset_right = 328.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("2_r75pk")
 script = ExtResource("1_fwtai")
 delete_event_button = NodePath("DeleteButton")
 add_stream_button = NodePath("AddButton")
 play_button = NodePath("PlayButton")
 audio_label = NodePath("ResourcePicker/ResourceLabel")
 
+[node name="AddButton" type="Button" parent="."]
+self_modulate = Color(0.43137255, 1, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Add an audio variant to the key."
+theme = ExtResource("2_r75pk")
+icon = ExtResource("3_aknch")
+alignment = 0
+
+[node name="DeleteButton" type="Button" parent="."]
+self_modulate = Color(0.43137255, 1, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Delete this variant."
+theme = ExtResource("2_r75pk")
+icon = ExtResource("4_il77p")
+
 [node name="PlayButton" type="Button" parent="."]
+self_modulate = Color(0.43137255, 1, 0, 1)
 layout_mode = 2
 tooltip_text = "Play this audio variant."
+theme = ExtResource("2_r75pk")
 icon = ExtResource("2_jis6r")
+alignment = 0
 
 [node name="WeightSliderContainer" type="FlowContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 tooltip_text = "The weighted probabily this variant will play.
 Only used when there is more than one variant."
+theme = ExtResource("2_r75pk")
 alignment = 1
 
 [node name="ResourcePicker" type="Control" parent="."]
@@ -35,6 +59,7 @@ clip_contents = true
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_r75pk")
 
 [node name="ResourcePickerContainer" type="BoxContainer" parent="ResourcePicker"]
 layout_mode = 1
@@ -44,6 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_r75pk")
 alignment = 1
 vertical = true
 
@@ -58,19 +84,8 @@ offset_left = 0.0479984
 offset_right = 0.0159988
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_r75pk")
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 1
-
-[node name="AddButton" type="Button" parent="."]
-layout_mode = 2
-size_flags_vertical = 3
-tooltip_text = "Add an audio variant to the trigger."
-icon = ExtResource("3_aknch")
-
-[node name="DeleteButton" type="Button" parent="."]
-layout_mode = 2
-size_flags_vertical = 3
-tooltip_text = "Delete this variant."
-icon = ExtResource("4_il77p")

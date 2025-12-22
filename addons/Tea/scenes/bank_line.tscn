@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://co2eglljfwoxo"]
+[gd_scene load_steps=7 format=3 uid="uid://co2eglljfwoxo"]
 
-[ext_resource type="Texture2D" uid="uid://pad8hlsq2shw" path="res://addons/event_audio/icons/Close.svg" id="1_2kmlt"]
-[ext_resource type="Script" uid="uid://doguwu7ux6qft" path="res://addons/event_audio/src/ea_event_edit_control.gd" id="1_melcq"]
-[ext_resource type="Texture2D" uid="uid://i4qa40akvjaa" path="res://addons/event_audio/icons/Tools.svg" id="2_31ihp"]
-[ext_resource type="Texture2D" uid="uid://dcbbwdp16tdns" path="res://addons/event_audio/icons/RandomNumberGenerator.svg" id="3_ikqib"]
-[ext_resource type="PackedScene" uid="uid://b84km51g3vs0n" path="res://addons/event_audio/scenes/bank_resource_line.tscn" id="5_nou6o"]
+[ext_resource type="Theme" uid="uid://xbtok0i0r2qm" path="res://addons/Tea/tea_editor_theme.tres" id="1_euhvk"]
+[ext_resource type="Script" uid="uid://doguwu7ux6qft" path="res://addons/Tea/src/ea_event_edit_control.gd" id="1_melcq"]
+[ext_resource type="Texture2D" uid="uid://i4qa40akvjaa" path="res://addons/Tea/icons/Tools.svg" id="2_31ihp"]
+[ext_resource type="Texture2D" uid="uid://djgktanb5swk6" path="res://addons/Tea/icons/Remove.svg" id="3_euhvk"]
+[ext_resource type="Texture2D" uid="uid://dcbbwdp16tdns" path="res://addons/Tea/icons/RandomNumberGenerator.svg" id="3_ikqib"]
+[ext_resource type="PackedScene" uid="uid://b84km51g3vs0n" path="res://addons/Tea/scenes/bank_resource_line.tscn" id="5_nou6o"]
 
 [node name="TriggerLine" type="HBoxContainer" node_paths=PackedStringArray("delete_trigger_button", "play_random_button", "trigger_name_edit", "settings_button", "stream_settings_list")]
 anchors_preset = 15
@@ -15,6 +16,7 @@ offset_bottom = -655.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_euhvk")
 script = ExtResource("1_melcq")
 delete_trigger_button = NodePath("HBoxContainer/DeleteButton")
 play_random_button = NodePath("HBoxContainer/RandomButton")
@@ -26,38 +28,49 @@ stream_settings_list = NodePath("BoxContainer/ResourceList")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource("1_euhvk")
 
 [node name="DeleteButton" type="Button" parent="HBoxContainer"]
+self_modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 tooltip_text = "Delete this event."
-icon = ExtResource("1_2kmlt")
+theme = ExtResource("1_euhvk")
+icon = ExtResource("3_euhvk")
 
 [node name="TriggerEdit" type="LineEdit" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "The string that will trigger this audio event.
 Trigger strings are chopped right-to-left at the seperator character until a match is found."
-placeholder_text = "trigger string"
+theme = ExtResource("1_euhvk")
+placeholder_text = "key"
+select_all_on_focus = true
+caret_blink = true
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer"]
+self_modulate = Color(0.23921569, 0.60784316, 1, 1)
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 tooltip_text = "Playback settings."
+theme = ExtResource("1_euhvk")
 icon = ExtResource("2_31ihp")
-icon_alignment = 1
 
 [node name="RandomButton" type="Button" parent="HBoxContainer"]
+modulate = Color(1, 0.5137255, 0.2784314, 1)
 layout_mode = 2
 tooltip_text = "Trigger this audio. Plays back a random audio variant, taking into account the variant weights."
+theme = ExtResource("1_euhvk")
 icon = ExtResource("3_ikqib")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_euhvk")
 
 [node name="ResourceList" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_euhvk")
 
 [node name="ResourceLine" parent="BoxContainer/ResourceList" instance=ExtResource("5_nou6o")]
 visible = false
