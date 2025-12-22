@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://be741v81fj3xc"]
 
-[ext_resource type="Script" uid="uid://bngjovqtyrv0v" path="res://addons/Tea/event_audio.gd" id="1_qcm2g"]
+[ext_resource type="Script" uid="uid://bngjovqtyrv0v" path="res://addons/Tea/tea.gd" id="1_qcm2g"]
 
 [node name="TeaAutoload" type="Node"]
 script = ExtResource("1_qcm2g")

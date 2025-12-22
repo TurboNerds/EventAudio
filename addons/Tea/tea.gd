@@ -20,7 +20,7 @@ class AudioEmitter2D:
 		set(_player):
 			if _player: _player.finished.connect(func(): finished.emit())
 	var leaf: TeaLeaf
-	
+
 	signal finished
 
 var _active_emitters_2d = Array()
