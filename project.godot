@@ -13,11 +13,12 @@ config_version=5
 config/name="TeaDev"
 run/main_scene="uid://d2lc5hjimnq4q"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="uid://glkjld6kdcmy"
 
 [autoload]
 
 Tea="*res://addons/Tea/scenes/tea_autoload.tscn"
-TeaHouse="*res://addons/Tea/scenes/tea_house.tscn"
+TeaCup="*res://addons/Tea/scenes/tea_cup.tscn"
 
 [display]
 

@@ -1,3 +1,4 @@
+@icon("res://addons/Tea/icons/teabag.svg")
 class_name TeaBag extends Node
 @export var _audio_bank_resource : TeaBank
 
